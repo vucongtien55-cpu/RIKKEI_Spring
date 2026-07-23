@@ -1,4 +1,4 @@
-package com.yourcompany.cau3.model.entity;
+package org.example.baitapss03.models.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,11 +9,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Task {
+public class Instructor {
     private Long id;
-    private String title;
-    private String description;
-    private String priority;
-    private User user;
-
+    private String name;
+    private String email;
 }
