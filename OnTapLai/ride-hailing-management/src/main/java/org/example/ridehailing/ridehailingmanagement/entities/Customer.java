@@ -13,20 +13,24 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "Khách_hàng")
+@Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "Name")
+
+    @Column(name = "name")
     private String name;
-    @Column(name = "So điện thoại")
+
+    @Column(name = "phone")
     private String phone;
-    @Column(name = "email")
+
+    @Column(name = "email", unique = true)
     private String email;
-    @Column(name = "Địa chỉ")
+
+    @Column(name = "address")
     private String address;
 
     @OneToMany(mappedBy = "customer")
-    private List<Booking> booking;
+    private List<Booking> bookings;
 }

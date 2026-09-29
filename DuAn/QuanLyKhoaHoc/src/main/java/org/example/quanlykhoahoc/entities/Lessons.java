@@ -1,5 +1,6 @@
 package org.example.quanlykhoahoc.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -23,6 +24,7 @@ public class Lessons {
     // Liên kết với khóa học
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id", nullable = false)
+    @JsonIgnore
     private Courses course;
 
     @Column(nullable = false, length = 255)

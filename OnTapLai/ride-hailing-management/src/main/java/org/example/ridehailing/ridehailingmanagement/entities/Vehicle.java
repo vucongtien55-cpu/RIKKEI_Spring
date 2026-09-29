@@ -11,23 +11,26 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "Xe")
+@Table(name = "vehicle")
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "Biển số xe")
+
+    @Column(name = "license_plate", unique = true)
     private String licensePlate;
-    @Column(name = "Hãng xe")
+
+    @Column(name = "brand")
     private String brand;
-    @Column(name = "Dòng xe")
+
+    @Column(name = "model")
     private String model;
-    @Column(name = "Màu xe")
+
+    @Column(name = "color")
     private String color;
-    @Column(name = "Số chỗ")
+
+    @Column(name = "seat_capacity")
     private Integer seatCapacity;
-//    @Column(name = "Xe thuộc tài xế nào")
-//    private Long driverId;
 
     @OneToOne(mappedBy = "vehicle")
     private Driver driver;

@@ -33,5 +33,13 @@ public class DriverController {
 
     //Cập nhật
     @PutMapping("{id}")
-    public Driver updateDriver()
+    public Driver updateDriver(@PathVariable Long id, @RequestBody Driver driver){
+        return driverService.updateDriver(id, driver);
+    }
+
+    //Xóa
+    @DeleteMapping("{id}")
+    public void deleteDriver(@PathVariable Long id){
+        driverService.deleteDriver(id);
+    }
 }
